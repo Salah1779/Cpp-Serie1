@@ -213,7 +213,7 @@ static double evaluate(const std::string& expression) {
         else if (isClosingBracket(c)) {
             // Process all operations inside the parentheses or brackets
             // Pop operators and values until we encounter the matching opening bracket
-            while (!ops.empty() && ops.top() != '(' && ops.top() != '{' && ops.top() != '[') {
+            while (!ops.empty() && !isOpeningBracket(ops.top())) {
                 double val2 = values.top(); values.pop();  // Pop the second operand
                 double val1 = values.top(); values.pop();  // Pop the first operand
                 char op = ops.top(); ops.pop();  // Pop the operator
