@@ -126,7 +126,7 @@ static bool isValidExpression(const string& expression, bool handlesVariables) {
         // Check for valid single-letter variables (if handlesVariables is true)
         else if (handlesVariables && isalpha(c) && expectOperand) 
         {
-            // The character is a valid variable (lowercase letter)
+            // The character is a valid variable 
             lastWasOperator = false;  // After a variable, we expect an operator or closing parenthesis
             expectOperand = false;    // After a variable, we expect an operator or closing parenthesis
         }
